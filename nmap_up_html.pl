@@ -11,7 +11,7 @@ $mech->submit_form(
 form_id => 'form_auth_passwd',
 fields => {
 	login    => 'admin',
-	password    => 'bochifjogutphyish7uk',
+	password    => 'password',
 	}
 );
 

@@ -1,6 +1,11 @@
 #!/usr/bin/perl -w
 use WWW::Mechanize;
 use HTML::Manipulator;
+use CGI;
+
+my $cgi = CGI -> new;
+print $cgi -> header;
+
 $now = localtime;
 $alert = 0;
 $action = "";

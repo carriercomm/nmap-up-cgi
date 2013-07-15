@@ -1,9 +1,5 @@
 #!/usr/bin/perl -w
 
-# Copyright 2011 Quentin Gibert.
-# You may use this work without restrictions, as long as this notice is included.
-# The work is provided "as is" without warranty of any kind, neither express nor implied.
-
 use WWW::Mechanize;
 use HTML::Manipulator;
 use CGI;

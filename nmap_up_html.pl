@@ -10,6 +10,8 @@ print $cgi -> header;
 $now = localtime;
 $alert = 0;
 $action = "";
+
+#THIS PART OF THE CODE IS SPECIFIC TO MY PURPOSE:
 my $mech = WWW::Mechanize->new( autocheck => 1 );
 my $url = 'http://neufbox/network/dns';
 $mech->get($url);
@@ -28,13 +30,17 @@ $hostlist =~ s/.*=.*//gmx;
 $hostlist =~ s/^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\s*//gmx;
 $hostlist =~ s/^[0-9]*\s//gmx;
 #$hostlist =~ s/\n/ /gmx;
-#print $hostlist,qq{\n};
 
+#THIS WHERE IT BEGINS IF YOU DO NOT HAVE THE "NEUFBOX"
+#FROM FRENCH PROVIDER SFR.
 @cmd = `nmap -sP 192.168.1.1-254`;
+#HERE, YOU CAN OPEN A FILE CONTAINING THE LIST OF YOUR TRUSTED HOSTS
+#LIKE SO:
+# hostname1 hostname2 hostname3 ...
+
 #open ( HOSTLIST, "<", "/usr/local/groadmin/hostlist.txt" );
 #push @hostlist, <HOSTLIST>;
 #$hostlist = join( " ", @hostlist );
-#print $hostlist,qq{\n};
 #close( HOSTLIST );
 #
 foreach( @cmd ){
